@@ -1,0 +1,8 @@
+<?php
+require_once('../app/config/config.php');
+
+$id = $_GET['id'];
+
+$conn->query("DELETE FROM books WHERE id=$id");
+
+header("Location: book_list.php");
