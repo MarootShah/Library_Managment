@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");
 
-    if (passwordInput && togglePassword) {
+    if (passwordInput || togglePassword) {
         togglePassword.addEventListener("click", function () {
-            if (passwordInput.type === "password") {
+            if (passwordInput.type == "password") {
                 passwordInput.type = "text";
                 togglePassword.textContent = "Hide";
             } else {
@@ -66,35 +66,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (role) {
         role.addEventListener("change", toggleStudentFields);
-    }
-
-    const togglePassword = document.getElementById("togglePassword");
-    const password = document.getElementById("password");
-
-    if (togglePassword && password) {
-        togglePassword.addEventListener("click", function () {
-            if (password.type === "password") {
-                password.type = "text";
-                this.textContent = "Hide";
-            } else {
-                password.type = "password";
-                this.textContent = "Show";
-            }
-        });
-    }
-
-    const toggleConfPassword = document.getElementById("toggleConfPassword");
-    const confirmPassword = document.getElementById("confirm_password");
-
-    if (toggleConfPassword && confirmPassword) {
-        toggleConfPassword.addEventListener("click", function () {
-            if (confirmPassword.type === "password") {
-                confirmPassword.type = "text";
-                this.textContent = "Hide";
-            } else {
-                confirmPassword.type = "password";
-                this.textContent = "Show";
-            }
-        });
     }
 });

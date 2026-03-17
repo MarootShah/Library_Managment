@@ -134,19 +134,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <input type="text" name="class" id="class">
                             <label>Class</label>
                         </div>
+            <div class="input-group password-group">
+                <input type="password" name="password" id="password" required>
+                <label>Password</label>
+                <span id="togglePassword" style="cursor:pointer; user-select:none;">Show</span>
+            </div>
 
-                        <div class="input-group password-group">
-                            <input type="password" name="password" id="password" required>
-                            <label>Password</label>
-                            <span id="togglePassword" class="show-pass">Show</span>
-                        </div>
 
-                        <div class="input-group password-group">
-                            <input type="password" name="confirm_password" id="confirm_password" required>
-                            <label>Confirm Password</label>
-                            <span id="toggleConfPassword" class="show-pass">Show</span>
-                        </div>
-
+                <div class="input-group password-group">
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <label>Confirm Password</label>
+                <span id="toggleConfPassword" style="cursor:pointer; user-select:none;">Show</span>
+            </div>
                     </div>
 
                     <button type="submit" class="login-btn">Add User »</button>
@@ -157,6 +156,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php include('../includes/footer.php'); ?>
     </div>
 </div>
-<script src="../assests/JS/app.js"></script>
+<script src="../assests/js/app.js"></script>
                 </body>
                 </html>
