@@ -52,7 +52,7 @@ $returned = $conn->query("SELECT COUNT(id) as total FROM issued_books WHERE stat
                 </div>
             </a>
 
-            <a class="card-link" href="issued.php">
+            <a class="card-link" href="../issues/issues.php">
                 <div class="card orange">
                     <h1><?php echo $issued; ?></h1>
                     Issued
