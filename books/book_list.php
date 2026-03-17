@@ -130,6 +130,7 @@ onclick="return confirm('Delete book?')">🗑️</a>
 <th>Author</th>
 <th>Total</th>
 <th>Available</th>  
+<th>Action</th> 
 </tr>
 
 <?php while($row = $result->fetch_assoc()) { ?>
@@ -141,6 +142,16 @@ onclick="return confirm('Delete book?')">🗑️</a>
 <td><?php echo $row['author']; ?></td>
 <td><?php echo $row['total_qty']; ?></td>
 <td><?php echo $row['available_qty']; ?></td>
+<td>
+    <?php if($row['available_qty'] > 0){ ?>
+        <a href="../issues/issues   .php?id=<?php echo $row['id']; ?>" 
+           onclick="return confirm('Issue this book?')">
+           📚 Issue
+        </a>
+    <?php } else { ?>
+        ❌ Not Available
+<?php } ?>
+</td>
 
 </tr>
 
