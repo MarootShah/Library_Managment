@@ -6,7 +6,7 @@
         <li><a href="../public/index.php">Dashboard</a></li>
         <li><a href="../books/book_list.php">Books</a></li>
         <li><a href="../public/student.php">Users</a></li>
-        <li><a href="../issues/issues.php">Issued</a></li>
+        <li><a href="../issues/index.php">Issued</a></li>
         <li><a href="../public/add_users.php">Add Users</a></li>
     </ul>
 </div>
