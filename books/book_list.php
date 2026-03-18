@@ -144,10 +144,10 @@ onclick="return confirm('Delete book?')">🗑️</a>
 <td><?php echo $row['available_qty']; ?></td>
 <td>
     <?php if($row['available_qty'] > 0){ ?>
-        <a href="../issues/issues   .php?id=<?php echo $row['id']; ?>" 
-           onclick="return confirm('Issue this book?')">
-           📚 Issue
-        </a>
+        <a href="../issues/issues.php?id=<?php echo $row['id']; ?>" 
+   onclick="return confirm('Issue this book?')">
+   📚 Issue
+</a>
     <?php } else { ?>
         ❌ Not Available
 <?php } ?>
