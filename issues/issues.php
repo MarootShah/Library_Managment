@@ -6,81 +6,36 @@ if(!isset($_SESSION["user"])){
     exit();
 }
 
-// Fetch issued books
-$result = $conn->query("SELECT * FROM issued_books ORDER BY id DESC");
+// GET book id
+if(isset($_GET['id'])){
+    
+    $book_id = $_GET['id'];
+    $student_id = $_SESSION["user"]['id'];
+
+    // Get book (ONLY selected book)
+    $result = $conn->query("SELECT * FROM books WHERE id = $book_id");
+
+    // Option 3: loop
+    while($book = mysqli_fetch_array($result)){
+
+        // Check availability
+        if($book['available_qty'] > 0){
+
+            $issue_date = date("Y-m-d");
+            $due_date = date("Y-m-d", strtotime("+30 days"));
+
+            // Insert into issued_books
+            $conn->query("INSERT INTO issued_books 
+            (student_id, book_id, issue_date, due_date, status, fine_amount) 
+            VALUES ('$student_id', '$book_id', '$issue_date', '$due_date', 'issued', 0)");
+
+            // Reduce available quantity
+            $conn->query("UPDATE books SET available_qty = available_qty - 1  WHERE id = $book_id");
+        }
+    }
+}
+
+// Redirect back
+header("Location: ../books/book_list.php");
+exit();
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Issued Books</title>
-<link rel="stylesheet" href="../assests/css/style.css">
-</head>
-
-<body class="dashboard-page">
-
-<div class="dashboard">
-
-<?php include('../includes/sidebar.php'); ?>
-
-<div class="main">
-
-<div class="topbar">
-<h2>Issued Books</h2>
-<a class="logout" href="../public/logout.php">Logout</a>
-</div>
-
-<div style="padding:30px">
-
-<table class="issue-table">
-
-<tr>
-<th>ID</th>
-<th>Student ID</th>
-<th>Book ID</th>
-<th>Issue Date</th>
-<th>Due Date</th>
-<th>Return Date</th>
-<th>Status</th>
-<th>Fine</th>
-</tr>
-
-<?php while($row = $result->fetch_assoc()) { ?>
-
-<tr>
-
-<td><?php echo $row['id']; ?></td>
-<td><?php echo $row['student_id']; ?></td>
-<td><?php echo $row['book_id']; ?></td>
-<td><?php echo $row['issue_date']; ?></td>
-<td><?php echo $row['due_date']; ?></td>
-<td><?php echo $row['return_date']; ?></td>
-<td><?php echo $row['status']; ?></td>
-<td><?php echo $row['fine_amount']; ?></td>
-
-<td>
-<?php if($row['status'] == 'issued'){ ?>
-    <a href="return_book.php?id=<?php echo $row['id']; ?>" 
-       onclick="return confirm('Return this book?')">
-       🔄 Return
-    </a>
-<?php } else { ?>
-    ✔ Returned
-<?php } ?>
-</td>
-
-</tr>
-
-<?php } ?>
-
-</table>
-
-</div>
-
-<?php include('../includes/footer.php'); ?>
-
-</div>
-</div>
-
-</body>
-</html>
