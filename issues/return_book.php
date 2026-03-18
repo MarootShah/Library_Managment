@@ -22,7 +22,7 @@ $due_date = $issue['due_date'];
 $fine = 0;
 if($today > $due_date){
     $days_late = (strtotime($today) - strtotime($due_date)) / (60*60*24);
-    $fine = $days_late * 10;
+    $fine = $days_late * 100;
 }
 
 // Update issued_books
