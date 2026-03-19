@@ -15,7 +15,7 @@ ON issued_books.student_id = users.id LEFT JOIN books ON issued_books.book_id = 
 <html>
 <head>
 <title>Issued Books</title>
-<link rel="stylesheet" href="../assests/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="dashboard-page">
