@@ -59,10 +59,10 @@ include('../includes/header.php');
             </div>
 
           <div class="input-group password-group">
-    <input type="password" name="password" id="password" required>
-    <label>Password</label>
-    <span id="togglePassword" style="cursor:pointer; user-select:none;">Show</span>
-</div>
+                <input type="password" name="password" id="password" required>
+                <label>Password</label>
+                <span id="togglePassword" style="cursor:pointer; user-select:none;">Show</span>
+          </div>
             <button type="submit" class="login-btn">Log in »</button>
 
             <div class="register-link">
@@ -74,4 +74,4 @@ include('../includes/header.php');
     </div>
 </div>
 
-<script src="../assests/js/app.js"></script>
+<script src="../assets/js/app.js"></script>
