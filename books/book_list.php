@@ -16,7 +16,7 @@ $result = $conn->query("SELECT * FROM books ORDER BY id DESC");
 
 <title>Books</title>
 
-<link rel="stylesheet" href="../assests/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
@@ -96,7 +96,7 @@ onclick="return confirm('Delete book?')">🗑️</a>
 
 <title>Books</title>
 
-<link rel="stylesheet" href="../assests/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
