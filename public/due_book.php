@@ -2,13 +2,7 @@
 require_once "helpers.php";
 require_admin();
 
-$res = $conn->query("
-SELECT b.title, s.name, ib.due_date
-FROM issued_books ib
-JOIN books b ON b.id = ib.book_id
-JOIN students s ON s.id = ib.student_id
-WHERE ib.status='issued' AND ib.due_date < CURDATE()
-");
+$res = $conn->query("SELECT b.title, s.name, ib.due_date FROM issued_books ib JOIN books b ON b.id = ib.book_id JOIN students s ON s.id = ib.student_id WHERE ib.status='issued' AND ib.due_date < CURDATE()");
 ?>
 
 <!DOCTYPE html>
