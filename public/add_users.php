@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add User</title>
-    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="dashboard-page">
 
@@ -156,6 +156,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php include('../includes/footer.php'); ?>
     </div>
 </div>
-<script src="../assests/js/app.js"></script>
+<script src="../assets/js/app.js"></script>
                 </body>
                 </html>
