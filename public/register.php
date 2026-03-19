@@ -118,4 +118,4 @@ include('../includes/header.php');
     </div>
 </div>
 
-<script src="../assests/js/app.js"></script>
+<script src="../assets/js/app.js"></script>
