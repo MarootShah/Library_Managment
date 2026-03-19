@@ -27,7 +27,7 @@ if ($id > 0) {
 <html>
 <head>
     <title><?php echo $id > 0 ? "Edit Book" : "Add Book"; ?></title>
-    <link rel="stylesheet" href="../assests/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="dashboard-page">
 
