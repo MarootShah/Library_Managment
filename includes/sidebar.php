@@ -18,7 +18,7 @@
 <ul>
 <li><a href="../public/index.php">Dashboard</a></li>
 <li><a href="../books/book_list.php">Books</a></li>
-<li><a href="#">Issued</a></li>
+<li><a href="../issues/my_issued_books.php">Issued</a></li>
 <li><a href="#">Returned</a></li>
 <li><a href="#">Not Returned</a></li>
 </ul>
