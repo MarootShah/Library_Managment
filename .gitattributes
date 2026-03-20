@@ -1,0 +1,4 @@
+*.hack linguist-detectable=false
+*.hh linguist-detectable=false
+*.php linguist-language=PHP
+ 
